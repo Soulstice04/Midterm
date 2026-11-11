@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -92,8 +89,17 @@ public class PlayerScript : MonoBehaviour
             Score++;
             //And then update the game's score text
             UpdateScore();
+            
+             
+        }
+
+        if (Score >= 5)
+        {
+            SceneManager.LoadScene("WinScreen");
         }
     }
+
+    
 
     //This function updates the game's score text to show how many points you have
     //Even if your 'score' variable goes up, if you don't update the text the player doesn't know
@@ -107,4 +113,6 @@ public class PlayerScript : MonoBehaviour
     {
         SceneManager.LoadScene("Game Over");
     }
+    
+
 }
